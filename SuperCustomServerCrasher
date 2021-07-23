@@ -1,5 +1,5 @@
 game.StarterGui:SetCore("SendNotification", {
-Title = 'Crash is currently patched;
-Text = 'join discord.gg/Swagmode for updates on crash situation;
+Title = 'Crash is currently patched';
+Text = 'join discord.gg/Swagmode for updates on crash situation';
 Duration = 30;
 })
