@@ -1,3 +1,4 @@
+        
         game.StarterGui:SetCore("SendNotification", {
         Title = "DISCORD SERVER";
         Text = "discord.gg/swaggy, copied to clipboard";
