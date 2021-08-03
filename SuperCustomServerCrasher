@@ -1,5 +1,5 @@
 game.StarterGui:SetCore("SendNotification", {
-Title = 'discord.gg/bugga';
+Title = 'discord.gg/swaggest';
 Text = 'join !';
 Duration = 20;
 })
