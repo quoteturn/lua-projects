@@ -96,6 +96,22 @@ function Library:CreateMain()
         
         UITextSizeConstraint_8.Parent = TargetTextbox
         UITextSizeConstraint_8.MaxTextSize = 28
+        function ShrinkName()
+            TargetTextbox.FocusLost:connect(function()
+                for i,v in pairs(game.Players:GetChildren()) do
+                    if (string.sub(string.lower(v.Name),1,string.len(TargetTextbox.Text))) == string.lower(TargetTextbox.Text) then
+                        TargetTextbox.Text = v.Name
+                    end
+                end
+            end)
+        end
+        ShrinkName()
+        function GetTarget()
+        local Enemy = game.Players:FindFirstChild(TargetTextbox.Text)
+            if Enemy then
+                return Enemy
+            end
+        end 
     end
 
     Title.Name = "Title"
@@ -123,7 +139,7 @@ function Library:CreateMain()
     
     UIAspectRatioConstraint.Parent = MainFrame
     UIAspectRatioConstraint.AspectRatio = 1.579
-    
+
     local GamerLibrary = {}
     function GamerLibrary:NewTab(Name)
         local s,e = pcall(function()
@@ -282,6 +298,5 @@ function Library:CreateMain()
     end
     return GamerLibrary;
 end
-
 return Library
 
