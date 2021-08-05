@@ -191,11 +191,21 @@ function Library:CreateMain()
     local ThumbSize = Enum.ThumbnailSize.Size420x420
     local Content, IsReady = game:GetService('Players'):GetUserThumbnailAsync(TargetId, ThumbType, ThumbSize)
     ImageLabel.Image = Content
+    function UpdateImage()
+        local t = game.Players:FindFirstChild(TargetTextbox.Text)
+        local TargetId =  t.UserId
+        local ThumbType = Enum.ThumbnailType.HeadShot
+        local ThumbSize = Enum.ThumbnailSize.Size420x420
+        local Content, IsReady = game:GetService('Players'):GetUserThumbnailAsync(TargetId, ThumbType, ThumbSize)
+        ImageLabel.Image = Content
+            
+    end
     function ShrinkName()
         TargetTextbox.FocusLost:connect(function()
             for i,v in pairs(game.Players:GetChildren()) do
                 if (string.sub(string.lower(v.Name),1,string.len(TargetTextbox.Text))) == string.lower(TargetTextbox.Text) then
                     TargetTextbox.Text = v.Name
+                    UpdateImage()
                 end
             end
         end)
@@ -213,8 +223,8 @@ function Library:CreateMain()
     end)
 
     DiscordInviteButton.MouseButton1Click:Connect(function()
-        if CREDITS then
-            announce('Credits,', CREDITS, 10)
+        if DISCORD_LINK then
+            announce('Credits,', DISCORD_LINK, 10)
         else
             announce('Credits,', 'discord.gg/swaggest', 10)
         end
