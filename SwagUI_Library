@@ -221,7 +221,15 @@ function Library:CreateMain()
         n = tostring(n)
         return n:reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "")
     end)
-
+	game:GetService('UserInputService').InputBegan:Connect(function(key,b)
+		if key.KeyCode == TOGGLE_KEY then
+			if TopBar.Visible == true then
+				TopBar.Visible = false
+			else
+				TopBar.Visible = true
+			end
+		end
+	end)
     DiscordInviteButton.MouseButton1Click:Connect(function()
         if DISCORD_LINK then
             announce('Credits,', DISCORD_LINK, 10)
