@@ -213,8 +213,8 @@ function Library:CreateMain()
     end)
 
     DiscordInviteButton.MouseButton1Click:Connect(function()
-        if DISCORD_LINK then
-            announce('Credits,', DISCORD_LINK, 10)
+        if CREDITS then
+            announce('Credits,', CREDITS, 10)
         else
             announce('Credits,', 'discord.gg/swaggest', 10)
         end
