@@ -1,260 +1,317 @@
---\\ Using this UI for learning ive never made a ui lib before
---\\ W.I.P all made by me 😎😎😎
+
+--\\ My ui library dont touch :c
 
 local Library = {}
 function Library:CreateMain()
-    local ScreenGui = Instance.new("ScreenGui")
-    local TabsCreated = 0
-    ScreenGui.Name = 'Swag mode'
-    local MainFrame = Instance.new("Frame")
-    local Frame = Instance.new("Frame")
-    local TabsFrame = Instance.new("Frame")
-    local Title = Instance.new("TextLabel")
-    local UITextSizeConstraint_4 = Instance.new("UITextSizeConstraint")
-    local UIListLayout_3 = Instance.new("UIListLayout")
-    local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-    local DiscordButton = Instance.new("TextButton")
-    local UITextSizeConstraint_6 = Instance.new("UITextSizeConstraint")
-    local Line = Instance.new("TextLabel")
-    local UITextSizeConstraint_7 = Instance.new("UITextSizeConstraint")
-    local TargetTextbox = Instance.new("TextBox")
-    local UITextSizeConstraint_8 = Instance.new("UITextSizeConstraint")
-
-    ScreenGui.Parent = game:GetService('CoreGui')
-    ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    
-    MainFrame.Name = "MainFrame"
-    MainFrame.Parent = ScreenGui
-    MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-    MainFrame.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-    MainFrame.BorderSizePixel = 0
-    MainFrame.Position = UDim2.new(0.27957058, 0, 0.499272168, 0)
-    MainFrame.Size = UDim2.new(0.336005837, 0, 0.425036341, 0)
-    MainFrame.Active = true
-    MainFrame.Draggable = true
-    
-    TabsFrame.Name = "TabsFrame"
-    TabsFrame.Parent = MainFrame
-    TabsFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-    TabsFrame.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
-    TabsFrame.BorderSizePixel = 0
-    TabsFrame.Position = UDim2.new(0.182212576, 0, 0.568493187, 0)
-    TabsFrame.Size = UDim2.new(0.2885032, 0, 0.772260308, 0)
-
-    DiscordButton.Name = "DiscordButton"
-    DiscordButton.Parent = MainFrame
-    DiscordButton.AnchorPoint = Vector2.new(0.5, 0.5)
-    DiscordButton.BackgroundColor3 = Color3.fromRGB(27, 27, 27)
-    DiscordButton.BorderSizePixel = 0
-    DiscordButton.Position = UDim2.new(0.930585682, 0, 0.0924657658, 0)
-    DiscordButton.Size = UDim2.new(0.0715835169, 0, 0.113013707, 0)
-    DiscordButton.Font = Enum.Font.SourceSans
-    DiscordButton.Text = "D"
-    DiscordButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-    DiscordButton.TextScaled = true
-    DiscordButton.TextSize = 14.000
-    DiscordButton.TextWrapped = true
-    
-    UITextSizeConstraint_6.Parent = DiscordButton
-    UITextSizeConstraint_6.MaxTextSize = 33
-    
-    if TARGET_BAR_ENABLED then
-        Line.Name = "Line"
-        Line.Parent = MainFrame
-        Line.AnchorPoint = Vector2.new(0.5, 0.5)
-        Line.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Line.BackgroundTransparency = 1.000
-        Line.BorderSizePixel = 0
-        Line.Position = UDim2.new(0.581308961, 0, 0.109589055, 0)
-        Line.Size = UDim2.new(0.559724867, 0, 0.109589055, 0)
-        Line.Font = Enum.Font.SourceSans
-        Line.Text = "_______________________________"
-        Line.TextColor3 = Color3.fromRGB(0, 0, 0)
-        Line.TextScaled = true
-        Line.TextSize = 20.000
-        Line.TextWrapped = true
-        
-        UITextSizeConstraint_7.Parent = Line
-        UITextSizeConstraint_7.MaxTextSize = 20
-        
-        TargetTextbox.Name = "TargetTextbox"
-        TargetTextbox.Parent = MainFrame
-        TargetTextbox.AnchorPoint = Vector2.new(0.5, 0.5)
-        TargetTextbox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        TargetTextbox.BackgroundTransparency = 1.000
-        TargetTextbox.BorderSizePixel = 0
-        TargetTextbox.Position = UDim2.new(0.578562737, 0, 0.071917817, 0)
-        TargetTextbox.Size = UDim2.new(0.430645943, 0, 0.106164396, 0)
-        TargetTextbox.Font = Enum.Font.SourceSans
-        TargetTextbox.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
-        TargetTextbox.PlaceholderText = "Target's Username"
-        TargetTextbox.Text = ""
-        TargetTextbox.TextColor3 = Color3.fromRGB(0, 0, 0)
-        TargetTextbox.TextScaled = true
-        TargetTextbox.TextSize = 14.000
-        TargetTextbox.TextWrapped = true
-        
-        UITextSizeConstraint_8.Parent = TargetTextbox
-        UITextSizeConstraint_8.MaxTextSize = 28
-        function ShrinkName()
-            TargetTextbox.FocusLost:connect(function()
-                for i,v in pairs(game.Players:GetChildren()) do
-                    if (string.sub(string.lower(v.Name),1,string.len(TargetTextbox.Text))) == string.lower(TargetTextbox.Text) then
-                        TargetTextbox.Text = v.Name
-                    end
-                end
-            end)
-        end
-        ShrinkName()
-        function GetTarget()
-        local Enemy = game.Players:FindFirstChild(TargetTextbox.Text)
-            if Enemy then
-                return Enemy
-            end
-        end 
+    function announce(title,text,time)
+        game.StarterGui:SetCore("SendNotification", {
+            Title = title;
+            Text = text;
+            Duration = time;
+        })
     end
+    local TotalTabs = 0
+    local Swagmode = Instance.new("ScreenGui")
+    local TopBar = Instance.new("Frame")
+    local Title = Instance.new("TextLabel")
+    local TitleTextSizeConstraint = Instance.new("UITextSizeConstraint")
+    local MainFrame = Instance.new("Frame")
+    local PlayerFrame = Instance.new("Frame")
+    local ButtonsFrameUiList_2 = Instance.new("UIListLayout")
+    local FIX_2 = Instance.new("Frame")
+    local ImageLabel = Instance.new("ImageLabel")
+    local TargetTextbox = Instance.new("TextBox")
+    local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+    local DiscordButton = Instance.new("TextButton")
+    local DiscordInviteButton = Instance.new("ImageButton")
+    local DiscordButtonCorner = Instance.new("UICorner")
+    local DiscordTextSizeConstraint = Instance.new("UITextSizeConstraint")
+    local TopBarAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+    local ButtonsFrame = Instance.new("Frame")
+    local ButtonsFrameUiList = Instance.new("UIListLayout")
+    local FIX = Instance.new("Frame")
+    
 
+    --Properties:
+    
+    Swagmode.Name = "Swag mode"
+    Swagmode.Parent = game.CoreGui
+    Swagmode.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    
+    TopBar.Name = "TopBar"
+    TopBar.Parent = Swagmode
+    TopBar.AnchorPoint = Vector2.new(0.5, 0.5)
+    TopBar.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    TopBar.BorderSizePixel = 0
+    TopBar.Position = UDim2.new(0, 688, 0, 259)
+    TopBar.Size = UDim2.new(0.400268495, 0, 0.0419999994, 0)
+    
     Title.Name = "Title"
-    Title.Parent = MainFrame
+    Title.Parent = TopBar
     Title.AnchorPoint = Vector2.new(0.5, 0.5)
     Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Title.BackgroundTransparency = 1.000
     Title.BorderSizePixel = 0
-    Title.Position = UDim2.new(0.236442521, 0, 0.0924657658, 0)
-    Title.Size = UDim2.new(0.425162613, 0, 0.143835634, 0)
+    Title.Position = UDim2.new(0.17705676, 0, 0.485008806, 0)
+    Title.Size = UDim2.new(0.329416126, 0, 0.989000022, 0)
     Title.Font = Enum.Font.Nunito
     Title.Text = "Swag mode"
-    Title.TextColor3 = Color3.fromRGB(0, 0, 0)
+    Title.TextColor3 = Color3.fromRGB(255, 255, 255)
     Title.TextScaled = true
     Title.TextSize = 14.000
     Title.TextWrapped = true
     Title.TextXAlignment = Enum.TextXAlignment.Left
     
-    UITextSizeConstraint_4.Parent = Title
-    UITextSizeConstraint_4.MaxTextSize = 48
+    TitleTextSizeConstraint.Name = "TitleTextSizeConstraint"
+    TitleTextSizeConstraint.Parent = Title
+    TitleTextSizeConstraint.MaxTextSize = 44
     
-    UIListLayout_3.Parent = TabsFrame
-    UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
-    UIListLayout_3.Padding = UDim.new(0, 9)
+    MainFrame.Name = "MainFrame"
+    MainFrame.Parent = TopBar
+    MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+    MainFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    MainFrame.BorderSizePixel = 0
+    MainFrame.Position = UDim2.new(0.505132556, 0, 5.15873003, 0)
+    MainFrame.Size = UDim2.new(0.442745626, 0, 8.3380003, 0)
     
-    UIAspectRatioConstraint.Parent = MainFrame
-    UIAspectRatioConstraint.AspectRatio = 1.579
 
+    ButtonsFrame.Name = "ButtonsFrame"
+    ButtonsFrame.Parent = TopBar
+    ButtonsFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+    ButtonsFrame.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+    ButtonsFrame.BorderSizePixel = 0
+    ButtonsFrame.Position = UDim2.new(0.143207684, 0, 5.15873003, 0)
+    ButtonsFrame.Size = UDim2.new(0.286669284, 0, 8.30993366, 0)
+    
+    ButtonsFrameUiList.Name = "ButtonsFrameUiList"
+    ButtonsFrameUiList.Parent = ButtonsFrame
+    ButtonsFrameUiList.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    ButtonsFrameUiList.SortOrder = Enum.SortOrder.LayoutOrder
+    ButtonsFrameUiList.Padding = UDim.new(0, 5)
+    
+    FIX.Name = "FIX"
+    FIX.Parent = ButtonsFrame
+    FIX.AnchorPoint = Vector2.new(0.5, 0.5)
+    FIX.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    FIX.BackgroundTransparency = 2.000
+    FIX.BorderSizePixel = 0
+    FIX.Position = UDim2.new(0.499557137, 0, 0.0212236159, 0)
+    FIX.Size = UDim2.new(0.216016486, 0, 0.0443711728, 0)
+    
+
+
+    PlayerFrame.Name = "PlayerFrame"
+    PlayerFrame.Parent = TopBar
+    PlayerFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+    PlayerFrame.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+    PlayerFrame.BorderSizePixel = 0
+    PlayerFrame.Position = UDim2.new(0.861849844, 0, 5.15873003, 0)
+    PlayerFrame.Size = UDim2.new(0.27282536, 0, 8.33145714, 0)
+    
+    ButtonsFrameUiList_2.Name = "ButtonsFrameUiList"
+    ButtonsFrameUiList_2.Parent = PlayerFrame
+    ButtonsFrameUiList_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    ButtonsFrameUiList_2.SortOrder = Enum.SortOrder.LayoutOrder
+    ButtonsFrameUiList_2.Padding = UDim.new(0, 10)
+    
+    FIX_2.Name = "FIX"
+    FIX_2.Parent = PlayerFrame
+    FIX_2.AnchorPoint = Vector2.new(0.5, 0.5)
+    FIX_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    FIX_2.BackgroundTransparency = 2.000
+    FIX_2.BorderSizePixel = 0
+    FIX_2.Position = UDim2.new(0.00477187335, 0, 0.00264609838, 0)
+    FIX_2.Size = UDim2.new(0.216016501, 0, 0.0443711765, 0)
+    
+    ImageLabel.Parent = PlayerFrame
+    ImageLabel.AnchorPoint = Vector2.new(0.5, 0.5)
+    ImageLabel.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    ImageLabel.BorderSizePixel = 0
+    ImageLabel.Position = UDim2.new(0.424696714, 0, 0.227564469, 0)
+    ImageLabel.Size = UDim2.new(0.620343506, 0, 0.3439928, 0)
+    ImageLabel.Image = "rbxassetid://58238126"
+    
+    TargetTextbox.Name = "TargetTextbox"
+    TargetTextbox.Parent = PlayerFrame
+    TargetTextbox.AnchorPoint = Vector2.new(0.5, 0.5)
+    TargetTextbox.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    TargetTextbox.BorderSizePixel = 0
+    TargetTextbox.Position = UDim2.new(0.496274799, 0, 0.492174327, 0)
+    TargetTextbox.Size = UDim2.new(0.953877687, 0, 0.104944721, 0)
+    TargetTextbox.Font = Enum.Font.SourceSans
+    TargetTextbox.Text = ""
+    TargetTextbox.TextColor3 = Color3.fromRGB(0, 0, 0)
+    TargetTextbox.TextScaled = true
+    TargetTextbox.TextSize = 14.000
+    TargetTextbox.TextWrapped = true
+    
+    UITextSizeConstraint.Parent = TargetTextbox
+    UITextSizeConstraint.MaxTextSize = 39
+    
+    DiscordButton.Name = "DiscordButton"
+    DiscordButton.Parent = TopBar
+    DiscordButton.AnchorPoint = Vector2.new(0.5, 0.5)
+    DiscordButton.BackgroundColor3 = Color3.fromRGB(53, 53, 53)
+    DiscordButton.BorderSizePixel = 0
+    DiscordButton.Position = UDim2.new(0.969906569, 0, 0.485008806, 0)
+    DiscordButton.Size = UDim2.new(0.0455423445, 0, 0.705467343, 0)
+    DiscordButton.Font = Enum.Font.SourceSans
+    DiscordButton.Text = ""
+    DiscordButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+    DiscordButton.TextScaled = true
+    DiscordButton.TextSize = 14.000
+    DiscordButton.TextWrapped = true
+    
+    DiscordInviteButton.Name = "DiscordInviteButton"
+    DiscordInviteButton.Parent = DiscordButton
+    DiscordInviteButton.AnchorPoint = Vector2.new(0.5, 0.5)
+    DiscordInviteButton.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
+    DiscordInviteButton.BackgroundTransparency = 1.000
+    DiscordInviteButton.BorderSizePixel = 0
+    DiscordInviteButton.Position = UDim2.new(0.485967398, 0, 0.46875, 0)
+    DiscordInviteButton.Size = UDim2.new(1.34285712, 0, 0.984375, 0)
+    DiscordInviteButton.Image = "http://www.roblox.com/asset/?id=6607932702"
+    DiscordInviteButton.ScaleType = Enum.ScaleType.Fit
+    
+    DiscordButtonCorner.Name = "DiscordButtonCorner"
+    DiscordButtonCorner.Parent = DiscordButton
+    
+    DiscordTextSizeConstraint.Name = "DiscordTextSizeConstraint"
+    DiscordTextSizeConstraint.Parent = DiscordButton
+    DiscordTextSizeConstraint.MaxTextSize = 32
+    
+    TopBarAspectRatioConstraint.Name = "TopBarAspectRatioConstraint"
+    TopBarAspectRatioConstraint.Parent = TopBar
+    TopBarAspectRatioConstraint.AspectRatio = 16.934
+    TopBar.Active = true
+    TopBar.Draggable = true
+    TargetTextbox.Text = game.Players.LocalPlayer.Name
+    local TargetId =  game.Players.LocalPlayer.UserId
+    local ThumbType = Enum.ThumbnailType.HeadShot
+    local ThumbSize = Enum.ThumbnailSize.Size420x420
+    local Content, IsReady = game:GetService('Players'):GetUserThumbnailAsync(TargetId, ThumbType, ThumbSize)
+    ImageLabel.Image = Content
+    function ShrinkName()
+        TargetTextbox.FocusLost:connect(function()
+            for i,v in pairs(game.Players:GetChildren()) do
+                if (string.sub(string.lower(v.Name),1,string.len(TargetTextbox.Text))) == string.lower(TargetTextbox.Text) then
+                    TargetTextbox.Text = v.Name
+                end
+            end
+        end)
+    end
+    ShrinkName()
+    function GetTarget()
+        if game.Players:FindFirstChild(TargetTextbox.Text) then
+            return game.Players:FindFirstChild(TargetTextbox.Text)
+        end
+    end
+    
+    Format = (function (n)
+        n = tostring(n)
+        return n:reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "")
+    end)
+
+    DiscordInviteButton.MouseButton1Click:Connect(function()
+        if DISCORD_LINK then
+            announce('Credits,', DISCORD_LINK, 10)
+        else
+            announce('Credits,', 'discord.gg/swaggest', 10)
+        end
+    end)
     local GamerLibrary = {}
     function GamerLibrary:NewTab(Name)
-        local s,e = pcall(function()
         local TabButton = Instance.new("TextButton")
-        UITextSizeConstraint_5 = Instance.new("UITextSizeConstraint")
-        TabButton.Name = Name or 'Blank_Button'
-        TabButton.Parent = TabsFrame
+        local TabButtonTextSizeConstraint = Instance.new("UITextSizeConstraint")
+    
+        TabButton.Name = Name
+        TabButton.Text = Name
+        TabButton.Parent = ButtonsFrame
         TabButton.AnchorPoint = Vector2.new(0.5, 0.5)
-        TabButton.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+        TabButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
         TabButton.BorderSizePixel = 0
-        TabButton.Position = UDim2.new(0.496240705, 0, 0.128603116, 0)
-        TabButton.Size = UDim2.new(1, 0, 0.133037671, 0)
-        TabButton.Font = Enum.Font.SourceSans
-        TabButton.Text = Name or 'Blank_Button'
-        TabButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+        TabButton.Position = UDim2.new(1.73482561, 0, 1.44320583, 0)
+        TabButton.Size = UDim2.new(0.824333727, 0, 0.102639891, 0)
+        TabButton.Font = Enum.Font.Nunito
+        TabButton.TextColor3 = Color3.fromRGB(255, 255, 255)
         TabButton.TextScaled = true
         TabButton.TextSize = 14.000
         TabButton.TextWrapped = true
-                
-        local TabSFrame = Instance.new("ScrollingFrame")
-        local UIListLayout_2 = Instance.new("UIListLayout")
-        local UIListLayout_22 = Instance.new("UIListLayout")
-       
-        TabSFrame.Name = Name .. 'SFrame' or 'BlankSFrame'
-        TabSFrame.Parent = MainFrame
-        TabSFrame.Active = true
-        TabSFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-        TabSFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-        TabSFrame.BackgroundTransparency = 0.800
-        TabSFrame.BorderSizePixel = 0
-        TabSFrame.Position = UDim2.new(0.678958774, 0, 0.568493187, 0)
-        TabSFrame.Size = UDim2.new(0.605205953, 0, 0.773972511, 0)
         
-        local Frame = Instance.new('Frame')
-        Frame.Parent = TabSFrame
-        Frame.AnchorPoint = Vector2.new(0.5, 0.5)
-        Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        Frame.BackgroundTransparency = 1.000
-        Frame.BorderSizePixel = 0
-        Frame.Position = UDim2.new(0.498207986, 0, 1.00442493, 0)
-        Frame.Size = UDim2.new(1, 0, 5.2102232, 0)
+        TabButtonTextSizeConstraint.Name = "TabButtonTextSizeConstraint"
+        TabButtonTextSizeConstraint.Parent = TabButton
+        TabButtonTextSizeConstraint.MaxTextSize = 38
         
+        local ScrollingFrame = Instance.new("ScrollingFrame")
+        ScrollingFrame.Name = Name .. 'SFrame'
+        ScrollingFrame.Parent = MainFrame
+        ScrollingFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+        ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        ScrollingFrame.BackgroundTransparency = 1.000
+        ScrollingFrame.BorderSizePixel = 0
+        ScrollingFrame.Position = UDim2.new(0.51164484, 0, 0.502364159, 0)
+        ScrollingFrame.Size = UDim2.new(0.89631182, 0, 0.904234648, 0)
+        ScrollingFrame.ScrollBarThickness = 2
+        
+        local ScrollingListLayout = Instance.new("UIListLayout")
+
+        ScrollingListLayout.Name = "ScrollingListLayout"
+        ScrollingListLayout.Parent = ScrollingFrame
+        ScrollingListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+        ScrollingListLayout.Padding = UDim.new(0, 6)
+
+        if TotalTabs == 0 then
+            TotalTabs = 1
+        else
+            ScrollingFrame.Visible = false
+        end
         TabButton.MouseButton1Click:Connect(function()
-            local s,e = pcall(function()
             for i,v in pairs(MainFrame:GetChildren()) do
-                if string.find(v.Name, 'SFrame') then
-                    if v.Name ~= TabSFrame.Name then
-                        v.Visible = false
-                    else
-                        v.Visible = true
-                    end
+                if v.Name == Name .. 'SFrame' then
+                    v.Visible = true
+                else
+                    v.Visible = false
                 end
             end
-            end)
         end)
-        
-        UIListLayout_2.Parent = Frame
-        UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-        UIListLayout_2.Padding = UDim.new(0, 5)
-    
-        UITextSizeConstraint_5.Parent = TabButton
-        UITextSizeConstraint_5.MaxTextSize = 29
-        UIListLayout_22.Parent = TabSFrame
-        UIListLayout_22.SortOrder = Enum.SortOrder.LayoutOrder
-        UIListLayout_22.Padding = UDim.new(0,5)
-        if TabsCreated == 0 then
-            TabsCreated = 1
-        else
-            TabSFrame.Visible = false
-        end
-
-        end)
-        if e then print(e) end
     end
-    
     function GamerLibrary:NewButton(Name, Tab, Action)
         local Button = Instance.new("TextButton")
-        local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
-        Button.Name = Name
-        Button.Parent = game:GetService("CoreGui")["Swag mode"].MainFrame:FindFirstChild(Tab..'SFrame').Frame
+        local ButtonTextSizeConstraint = Instance.new("UITextSizeConstraint")
+        Button.Name = Name or 'Blank_Button'
+        Button.Text = Name or 'Blank_Button'
+        Button.Parent = MainFrame:FindFirstChild(Tab .. 'SFrame')
         Button.AnchorPoint = Vector2.new(0.5, 0.5)
-        Button.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+        Button.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
         Button.BorderSizePixel = 0
-        Button.Text = Name
-        Button.Position = UDim2.new(0.478494614, 0, 0.0057232054, 0)
-        Button.Size = UDim2.new(0.956989229, 0, 0.0114464052, 0)
+        Button.Position = UDim2.new(0.499660134, 0, 0.0293037053, 0)
+        Button.Size = UDim2.new(0.966513693, 0, 0.0559633933, 0)
         Button.Font = Enum.Font.Nunito
-        Button.TextColor3 = Color3.fromRGB(0, 0, 0)
+        Button.TextColor3 = Color3.fromRGB(255, 255, 255)
         Button.TextScaled = true
         Button.TextSize = 14.000
-        Button.Active = true
-        Button.Visible = true
         Button.TextWrapped = true
-        Button.ZIndex = 444
         
-        UITextSizeConstraint.Parent = Button
-        UITextSizeConstraint.MaxTextSize = 82
+        ButtonTextSizeConstraint.Name = "ButtonTextSizeConstraint"
+        ButtonTextSizeConstraint.Parent = Button
+        ButtonTextSizeConstraint.MaxTextSize = 90
         Button.MouseButton1Click:Connect(Action)
     end
     function GamerLibrary:NewToggle(Name, Tab, Action)
         local Toggle = Instance.new("TextButton")
-        local ToggleColor = Instance.new("TextButton")
-        local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
-        local UITextSizeConstraint_3 = Instance.new("UITextSizeConstraint")
+        local ToggleColor = Instance.new("Frame")
+        local ToggleTextSizeConstraint = Instance.new("UITextSizeConstraint")
         
-        Toggle.Name = Name
-        Toggle.Parent = game:GetService("CoreGui")["Swag mode"].MainFrame:FindFirstChild(Tab..'SFrame').Frame
+        Toggle.Name = Name or 'Blank_Toggle'
+        Toggle.Parent =  MainFrame:FindFirstChild(Tab .. 'SFrame')
         Toggle.AnchorPoint = Vector2.new(0.5, 0.5)
-        Toggle.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+        Toggle.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
         Toggle.BorderSizePixel = 0
-        Toggle.Position = UDim2.new(0.478494614, 0, 0.028345881, 0)
-        Toggle.Size = UDim2.new(0.956989229, 0, 0.0111740315, 0)
+        Toggle.Position = UDim2.new(0.483499974, 0, 0.231354266, 0)
+        Toggle.Size = UDim2.new(0.967000067, 0, 0.0558097214, 0)
         Toggle.Font = Enum.Font.Nunito
         Toggle.Text = Name
-        Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+        Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
         Toggle.TextScaled = true
         Toggle.TextSize = 14.000
         Toggle.TextWrapped = true
@@ -262,22 +319,14 @@ function Library:CreateMain()
         ToggleColor.Name = "ToggleColor"
         ToggleColor.Parent = Toggle
         ToggleColor.AnchorPoint = Vector2.new(0.5, 0.5)
-        ToggleColor.BackgroundColor3 = Color3.new(255,0,0)
+        ToggleColor.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
         ToggleColor.BorderSizePixel = 0
-        ToggleColor.Position = UDim2.new(0.958801746, 0, 0.487610728, 0)
-        ToggleColor.Size = UDim2.new(0.078651689, 0, 0.999999881, 0)
-        ToggleColor.Font = Enum.Font.SourceSans
-        ToggleColor.Text = ""
-        ToggleColor.TextColor3 = Color3.fromRGB(0, 0, 0)
-        ToggleColor.TextScaled = true
-        ToggleColor.TextSize = 14.000
-        ToggleColor.TextWrapped = true
+        ToggleColor.Position = UDim2.new(0.0169630423, 0, 0.483276606, 0)
+        ToggleColor.Size = UDim2.new(0.0467188582, 0, 0.99999994, 0)
         
-        UITextSizeConstraint_2.Parent = ToggleColor
-        UITextSizeConstraint_2.MaxTextSize = 82
-        
-        UITextSizeConstraint_3.Parent = Toggle
-        UITextSizeConstraint_3.MaxTextSize = 82
+        ToggleTextSizeConstraint.Name = "ToggleTextSizeConstraint"
+        ToggleTextSizeConstraint.Parent = Toggle
+        ToggleTextSizeConstraint.MaxTextSize = 90
         local RED = Color3.new(255,0,0)
         local GREEN = Color3.new(0,255,0)
         ToggleColor.BackgroundColor3 = RED
@@ -285,16 +334,144 @@ function Library:CreateMain()
         Toggle.MouseButton1Click:Connect(function()
             if ToggleColor.BackgroundColor3 == RED then
                 ToggleColor.BackgroundColor3 = GREEN
+                repeat
+                    local s,e = pcall(function()
+                    Action()
+                    game.RunService.RenderStepped:Wait()
+                    end)
+                    if e then
+                        ToggleColor.BackgroundColor3 = RED
+                        announce(Name .. ' Disabled', 'an error occured in the script', 5 )
+                    end
+                until ToggleColor.BackgroundColor3 == RED
             else
                 ToggleColor.BackgroundColor3 = RED
             end
         end)
-        Toggle.MouseButton1Click:Connect(function()
-            repeat
-                Action()
-                game.RunService.RenderStepped:Wait()
-            until ToggleColor.BackgroundColor3 == RED
-        end)
+    end
+    function GamerLibrary:NewSlider(Name, Tab, Min, Max, callback)
+    	minvalue = Min or 0
+    	maxvalue = Max or 100
+    	
+    	callback = callback or function() end
+    	
+    	local mouse = game.Players.LocalPlayer:GetMouse()
+    	local uis = game:GetService("UserInputService")
+    	local Value;
+    	
+	
+        local SliderFrame = Instance.new("Frame")
+        local SliderValue = Instance.new("TextLabel")
+        local SliderValueTextSizeConstraint = Instance.new("UITextSizeConstraint")
+        local SliderName = Instance.new("TextLabel")
+        local SliderNameTextSizeConstraint = Instance.new("UITextSizeConstraint")
+        local Slider = Instance.new("TextButton")
+        local SliderBar = Instance.new("Frame")
+        local SliderTextSizeConstraint = Instance.new("UITextSizeConstraint")
+    
+
+        SliderFrame.Name = "SliderFrame"
+        SliderFrame.Parent = MainFrame:FindFirstChild(Tab .. 'SFrame')
+        SliderFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+        SliderFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+        SliderFrame.BorderSizePixel = 0
+        SliderFrame.Position = UDim2.new(0.483499974, 0, 0.357407004, 0)
+        SliderFrame.Size = UDim2.new(0.967000067, 0, 0.0273842011, 42)
+                
+        SliderName.Name = "SliderName"
+        SliderName.Parent = SliderFrame
+        SliderName.AnchorPoint = Vector2.new(0.5, 0.5)
+        SliderName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        SliderName.BackgroundTransparency = 1.000
+        SliderName.BorderSizePixel = 0
+        SliderName.Position = UDim2.new(0.321358204, 0, 0.266848445, 0)
+        SliderName.Size = UDim2.new(0.6178509, 0, 0.533696711, 0)
+        SliderName.Font = Enum.Font.Nunito
+        SliderName.Text = Name
+        SliderName.TextColor3 = Color3.fromRGB(255, 255, 255)
+        SliderName.TextScaled = true
+        SliderName.TextSize = 14.000
+        SliderName.TextWrapped = true
+        SliderName.TextXAlignment = Enum.TextXAlignment.Left
+        
+        SliderValue.Name = "SliderValue"
+        SliderValue.Parent = SliderFrame
+        SliderValue.AnchorPoint = Vector2.new(0.5, 0.5)
+        SliderValue.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        SliderValue.BackgroundTransparency = 1.000
+        SliderValue.BorderSizePixel = 0
+        SliderValue.Position = UDim2.new(0.796758354, 0, 0.270703703, 0)
+        SliderValue.Size = UDim2.new(0.379000008, 0, 0.541407764, 0)
+        SliderValue.Font = Enum.Font.Nunito
+        SliderValue.Text = "0"
+        SliderValue.TextColor3 = Color3.fromRGB(255, 255, 255)
+        SliderValue.TextScaled = true
+        SliderValue.TextSize = 14.000
+        SliderValue.TextWrapped = true
+        SliderValue.TextXAlignment = Enum.TextXAlignment.Right
+        
+        SliderValueTextSizeConstraint.Name = "SliderValueTextSizeConstraint"
+        SliderValueTextSizeConstraint.Parent = SliderValue
+        SliderValueTextSizeConstraint.MaxTextSize = 75
+
+        
+        SliderNameTextSizeConstraint.Name = "SliderNameTextSizeConstraint"
+        SliderNameTextSizeConstraint.Parent = SliderName
+        SliderNameTextSizeConstraint.MaxTextSize = 73
+                
+        Slider.Name = "Slider"
+        Slider.Parent = SliderFrame
+        Slider.Active = false
+        Slider.AnchorPoint = Vector2.new(0.5, 0.5)
+        Slider.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+        Slider.BorderSizePixel = 0
+        Slider.Position = UDim2.new(0.50226754, 0, 0.709133923, 0)
+        Slider.Size = UDim2.new(0.970286012, 0, 0, 17)
+        Slider.Font = Enum.Font.SourceSans
+        Slider.Text = ""
+        Slider.TextColor3 = Color3.fromRGB(0, 0, 0)
+        Slider.TextScaled = true
+        Slider.TextSize = 14.000
+        Slider.TextWrapped = true
+        
+        SliderBar.Name = "SliderBar"
+        SliderBar.Parent = Slider
+        SliderBar.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+        SliderBar.BorderSizePixel = 0
+        SliderBar.Size = UDim2.new(0.0594405606, 0, 1, 0)
+        
+        SliderTextSizeConstraint.Name = "SliderTextSizeConstraint"
+        SliderTextSizeConstraint.Parent = Slider
+        SliderTextSizeConstraint.MaxTextSize = 17
+        
+    	Slider.MouseButton1Down:Connect(function()
+    		Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 270) * SliderBar.AbsoluteSize.X) + tonumber(minvalue)) or 0
+    		pcall(function()
+    			callback(Value)
+    		end)
+    		SliderBar.Size = UDim2.new(0, math.clamp(mouse.X - SliderBar.AbsolutePosition.X, 0,270), 0, 17)
+    		moveconnection = mouse.Move:Connect(function()
+    			SliderValue.Text = Value                                          
+    			Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 270) * SliderBar.AbsoluteSize.X) + tonumber(minvalue))
+    			pcall(function()
+    				callback(Value)
+    				SliderValue.Text = Value
+    			end)
+    			SliderBar.Size = UDim2.new(0, math.clamp(mouse.X - SliderBar.AbsolutePosition.X, 0, 270), 0, 17)
+    		end)
+    		releaseconnection = uis.InputEnded:Connect(function(Mouse)
+    			if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
+    				Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 270) * SliderBar.AbsoluteSize.X) + tonumber(minvalue))
+    				pcall(function()
+    					callback(Value)
+    				end)
+    				SliderBar.Size = UDim2.new(0, math.clamp(mouse.X - SliderBar.AbsolutePosition.X, 0, 270), 0, 17)
+    				moveconnection:Disconnect()
+    				releaseconnection:Disconnect()
+    			end
+    		end)
+    	end)
+        
     end
     return GamerLibrary;
 end
