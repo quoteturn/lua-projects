@@ -1,0 +1,459 @@
+
+-- Still Testing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local Library = {}
+
+function Library:CreateMain()
+    
+    local SWAGMODE = Instance.new("ScreenGui")
+    local MainFrame = Instance.new("Frame")
+    local Menu = Instance.new("Frame")
+    local Swagmode = Instance.new("TextLabel")
+    local SwagmodeGradiant = Instance.new("UIGradient")
+    local Line_Menu = Instance.new("Frame")
+    local TabFrame = Instance.new("ScrollingFrame")
+    local HomeButton = Instance.new("TextButton")
+    local TabFrameUILayout = Instance.new("UIListLayout")
+    local DropShadowHolder = Instance.new("Frame")
+    local DropShadow = Instance.new("ImageLabel")
+    local TopLine = Instance.new("Frame")
+    local SideInfo = Instance.new("Frame")
+    local TargetImage = Instance.new("ImageLabel")
+    local TargetImageUICorner = Instance.new("UICorner")
+    local TargetTextbox = Instance.new("TextBox")
+    local InfoFrame = Instance.new("Frame")
+    local InfoFrameUILayout = Instance.new("UIListLayout")
+    local HomeFrame = Instance.new("Frame")
+    local YouImage = Instance.new("ImageLabel")
+    local Welcome_Swagmode = Instance.new("TextLabel")
+    local Welcome_Swagmode_Rank = Instance.new("TextLabel")
+    local ButtonsFrame = Instance.new("Frame")
+    
+    SWAGMODE.Name = "SWAGMODE"
+    SWAGMODE.Parent = game:GetService('CoreGui')
+    SWAGMODE.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    
+    MainFrame.Name = "MainFrame"
+    MainFrame.Parent = SWAGMODE
+    MainFrame.BackgroundColor3 = Color3.fromRGB(19, 19, 19)
+    MainFrame.BorderSizePixel = 0
+    MainFrame.Position = UDim2.new(0.0354907662, 0, 0.250159591, 0)
+    MainFrame.Size = UDim2.new(0, 605, 0, 336)
+    
+    Menu.Name = "Menu"
+    Menu.Parent = MainFrame
+    Menu.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+    Menu.BorderSizePixel = 0
+    Menu.Size = UDim2.new(0, 155, 0, 336)
+    
+    Swagmode.Name = "Swagmode"
+    Swagmode.Parent = Menu
+    Swagmode.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Swagmode.BackgroundTransparency = 1.000
+    Swagmode.Position = UDim2.new(0.045161292, 0, 0, 0)
+    Swagmode.Size = UDim2.new(0, 115, 0, 34)
+    Swagmode.Font = Enum.Font.GothamBlack
+    Swagmode.Text = "SWAGMODE"
+    Swagmode.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Swagmode.TextSize = 20.000
+    
+    SwagmodeGradiant.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(49, 48, 70)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+    SwagmodeGradiant.Offset = Vector2.new(0.100000001, 0)
+    SwagmodeGradiant.Name = "SwagmodeGradiant"
+    SwagmodeGradiant.Parent = Swagmode
+    
+    local function UKLMNG_fake_script()
+    	local script = Instance.new('LocalScript', SwagmodeGradiant)
+    	game:GetService('RunService').RenderStepped:Connect(function()
+    		script.Parent.Rotation = (tick() * 75) % 360;
+    	end)
+    end
+
+    coroutine.wrap(UKLMNG_fake_script)()
+    Line_Menu.Name = "Line_Menu"
+    Line_Menu.Parent = Menu
+    Line_Menu.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Line_Menu.BorderSizePixel = 0
+    Line_Menu.Position = UDim2.new(0.045161292, 0, 0.092261903, 0)
+    Line_Menu.Size = UDim2.new(0, 126, 0, 3)
+    
+    TabFrame.Name = "TabFrame"
+    TabFrame.Parent = Menu
+    TabFrame.Active = true
+    TabFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TabFrame.BackgroundTransparency = 1.000
+    TabFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)
+    TabFrame.BorderSizePixel = 0
+    TabFrame.Position = UDim2.new(0.0838709697, 0, 0.175595239, 0)
+    TabFrame.Size = UDim2.new(0, 135, 0, 262)
+    TabFrame.ScrollBarThickness = 7
+    
+    HomeButton.Name = "HomeButton"
+    HomeButton.Parent = TabFrame
+    HomeButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    HomeButton.BorderSizePixel = 0
+    HomeButton.Position = UDim2.new(0, 0, 1.16479306e-07, 0)
+    HomeButton.Size = UDim2.new(0, 120, 0, 31)
+    HomeButton.AutoButtonColor = false
+    HomeButton.Font = Enum.Font.GothamBlack
+    HomeButton.Text = "Home"
+    HomeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    HomeButton.TextSize = 14.000
+
+    TabFrameUILayout.Name = "TabFrameUILayout"
+    TabFrameUILayout.Parent = TabFrame
+    TabFrameUILayout.SortOrder = Enum.SortOrder.LayoutOrder
+    TabFrameUILayout.Padding = UDim.new(0, 7)
+    
+    DropShadowHolder.Name = "DropShadowHolder"
+    DropShadowHolder.Parent = MainFrame
+    DropShadowHolder.BackgroundTransparency = 1.000
+    DropShadowHolder.BorderSizePixel = 0
+    DropShadowHolder.Size = UDim2.new(1, 0, 1, 0)
+    DropShadowHolder.ZIndex = 0
+    
+    DropShadow.Name = "DropShadow"
+    DropShadow.Parent = DropShadowHolder
+    DropShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+    DropShadow.BackgroundColor3 = Color3.fromRGB(171, 170, 173)
+    DropShadow.BackgroundTransparency = 1.000
+    DropShadow.BorderSizePixel = 0
+    DropShadow.Position = UDim2.new(0.5, 0, 0.508928597, 0)
+    DropShadow.Size = UDim2.new(1, 47, 1, 47)
+    DropShadow.ZIndex = 0
+    DropShadow.Image = "rbxassetid://6015897843"
+    DropShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+    DropShadow.ImageTransparency = 0.200
+    DropShadow.ScaleType = Enum.ScaleType.Slice
+    DropShadow.SliceCenter = Rect.new(49, 49, 450, 450)
+
+    TopLine.Name = "TopLine"
+    TopLine.Parent = MainFrame
+    TopLine.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+    TopLine.BorderSizePixel = 0
+    TopLine.Position = UDim2.new(0.256198347, 0, 0, 0)
+    TopLine.Size = UDim2.new(0, 450, 0, 7)
+    
+    SideInfo.Name = "SideInfo"
+    SideInfo.Parent = MainFrame
+    SideInfo.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+    SideInfo.BorderSizePixel = 0
+    SideInfo.Position = UDim2.new(0.778512418, 0, 0.020833334, 0)
+    SideInfo.Size = UDim2.new(0, 134, 0, 329)
+    
+    TargetImage.Name = "TargetImage"
+    TargetImage.Parent = SideInfo
+    TargetImage.BackgroundColor3 = Color3.fromRGB(19, 19, 19)
+    TargetImage.Position = UDim2.new(0.0950299203, 0, 0.0244709235, 0)
+    TargetImage.Size = UDim2.new(0, 108, 0, 104)
+    TargetImage.Image = "rbxassetid://58238126"
+    TargetImage.ImageColor3 = Color3.fromRGB(19, 19, 19)
+    
+    TargetImageUICorner.CornerRadius = UDim.new(0, 500)
+    TargetImageUICorner.Name = "TargetImageUICorner"
+    TargetImageUICorner.Parent = TargetImage
+    
+    TargetTextbox.Name = "TargetTextbox"
+    TargetTextbox.Parent = SideInfo
+    TargetTextbox.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    TargetTextbox.BorderSizePixel = 0
+    TargetTextbox.Position = UDim2.new(0.072641857, 0, 0.392097205, 0)
+    TargetTextbox.Size = UDim2.new(0, 115, 0, 31)
+    TargetTextbox.Font = Enum.Font.GothamBlack
+    TargetTextbox.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+    TargetTextbox.Text = ""
+    TargetTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+    TargetTextbox.TextSize = 14.000
+    TargetTextbox.TextWrapped = true
+    
+    InfoFrame.Name = "InfoFrame"
+    InfoFrame.Parent = SideInfo
+    InfoFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    InfoFrame.BackgroundTransparency = 1.000
+    InfoFrame.BorderColor3 = Color3.fromRGB(27, 42, 53)
+    InfoFrame.Position = UDim2.new(0.0671641827, 0, 0.519756913, 0)
+    InfoFrame.Size = UDim2.new(0, 115, 0, 147)
+    
+
+    InfoFrameUILayout.Name = "InfoFrameUILayout"
+    InfoFrameUILayout.Parent = InfoFrame
+    InfoFrameUILayout.SortOrder = Enum.SortOrder.LayoutOrder
+    InfoFrameUILayout.Padding = UDim.new(0, 7)
+    
+    HomeFrame.Name = "HomeFrame"
+    HomeFrame.Parent = MainFrame
+    HomeFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    HomeFrame.BackgroundTransparency = 1.000
+    HomeFrame.Position = UDim2.new(0.256198347, 0, 0.0447944477, 0)
+    HomeFrame.Size = UDim2.new(0, 316, 0, 314)
+
+    YouImage.Name = "YouImage"
+    YouImage.Parent = HomeFrame
+    YouImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    YouImage.BackgroundTransparency = 1.000
+    YouImage.BorderSizePixel = 0
+    YouImage.Position = UDim2.new(0.259493619, 0, 0.121019103, 0)
+    YouImage.Size = UDim2.new(0, 150, 0, 150)
+    YouImage.Image = "rbxassetid://58238126"
+    YouImage.ImageColor3 = Color3.fromRGB(18, 18, 18)
+    
+    Welcome_Swagmode.Name = "Welcome_Swagmode"
+    Welcome_Swagmode.Parent = HomeFrame
+    Welcome_Swagmode.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Welcome_Swagmode.BackgroundTransparency = 1.000
+    Welcome_Swagmode.Position = UDim2.new(0.104430377, 0, 5.96046448e-08, 0)
+    Welcome_Swagmode.Size = UDim2.new(0, 249, 0, 34)
+    Welcome_Swagmode.Font = Enum.Font.GothamBlack
+    Welcome_Swagmode.Text = "Welcome to Swag mode"
+    Welcome_Swagmode.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Welcome_Swagmode.TextSize = 20.000
+    
+    Welcome_Swagmode_Rank.Name = "Welcome_Swagmode_Rank"
+    Welcome_Swagmode_Rank.Parent = HomeFrame
+    Welcome_Swagmode_Rank.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Welcome_Swagmode_Rank.BackgroundTransparency = 1.000
+    Welcome_Swagmode_Rank.Position = UDim2.new(0.104430377, 0, 0.878980935, 0)
+    Welcome_Swagmode_Rank.Size = UDim2.new(0, 249, 0, 34)
+    Welcome_Swagmode_Rank.Font = Enum.Font.GothamBlack
+    Welcome_Swagmode_Rank.Text = "Rank : *Fetching*"
+    Welcome_Swagmode_Rank.TextColor3 = Color3.fromRGB(255, 255, 255)
+    Welcome_Swagmode_Rank.TextSize = 20.000
+    
+    ButtonsFrame.Name = "ButtonsFrame"
+    ButtonsFrame.Parent = MainFrame
+    ButtonsFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    ButtonsFrame.BackgroundTransparency = 1.000
+    ButtonsFrame.Position = UDim2.new(0.256198347, 0, 0.0447944477, 0)
+    ButtonsFrame.Size = UDim2.new(0, 316, 0, 320)
+    ButtonsFrame.Visible = false
+
+    local GLib = {}
+    function GLib:NewTab(Name)
+        local TabButton = Instance.new("TextButton")
+        local SFrame = Instance.new("ScrollingFrame")
+        local SFrameLayout = Instance.new("UIListLayout")
+        
+        TabButton.Name = Name or 'broken'
+        TabButton.Text = Name or 'broken'
+        TabButton.Parent = TabFrame
+        TabButton.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+        TabButton.BorderSizePixel = 0
+        TabButton.Position = UDim2.new(0, 0, 1.16479306e-07, 0)
+        TabButton.Size = UDim2.new(0, 120, 0, 31)
+        TabButton.AutoButtonColor = false
+        TabButton.Font = Enum.Font.GothamBlack
+        TabButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TabButton.TextSize = 14.000
+        
+        SFrame.Name = Name .. "SFrame" or 'blankSFrame'
+        SFrame.Parent = ButtonsFrame
+        SFrame.Active = true
+        SFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        SFrame.BackgroundTransparency = 1.000
+        SFrame.BorderSizePixel = 0
+        SFrame.Position = UDim2.new(0.0379746817, 0, 0.0401567183, 0)
+        SFrame.Size = UDim2.new(0, 297, 0, 312)
+        SFrame.ScrollBarThickness = 7
+        
+        SFrameLayout.Name = "SFrameLayout"
+        SFrameLayout.Parent = SFrame
+        SFrameLayout.SortOrder = Enum.SortOrder.LayoutOrder
+        SFrameLayout.Padding = UDim.new(0, 6)
+    end
+    function GLib:NewSearch(Tab)
+        local Searchbar = Instance.new("TextBox")
+                
+        Searchbar.Name = "Searchbar"
+        Searchbar.Parent = SFrame
+        Searchbar.BackgroundColor3 = Color3.fromRGB(5, 5, 5)
+        Searchbar.BorderSizePixel = 0
+        Searchbar.Position = UDim2.new(-0.0168350171, 0, -0.229687497, 0)
+        Searchbar.Size = UDim2.new(0, 280, 0, 36)
+        Searchbar.Font = Enum.Font.SourceSansItalic
+        Searchbar.PlaceholderColor3 = Color3.fromRGB(52, 52, 52)
+        Searchbar.PlaceholderText = "SEARCH"
+        Searchbar.Text = ""
+        Searchbar.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Searchbar.TextSize = 20.000
+
+    end
+    function GLib:NewButton(Tab,Name,Action)
+        local Button = Instance.new("TextButton")
+
+        Button.Name = "Button"
+        Button.Parent = SFrame
+        Button.BackgroundColor3 = Color3.fromRGB(5, 5, 5)
+        Button.BorderSizePixel = 0
+        Button.Size = UDim2.new(0, 280, 0, 36)
+        Button.Font = Enum.Font.Gotham
+        Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Button.TextSize = 14.000
+    end
+    function GLib:NewToggle(Tab,Name,Action)
+        local Toggle = Instance.new("TextButton")
+        local ToggleColor = Instance.new("Frame")
+        
+        Toggle.Name = "Toggle"
+        Toggle.Parent = SFrame
+        Toggle.BackgroundColor3 = Color3.fromRGB(5, 5, 5)
+        Toggle.BorderSizePixel = 0
+        Toggle.Size = UDim2.new(0, 280, 0, 36)
+        Toggle.Font = Enum.Font.Gotham
+        Toggle.Text = "Toggle"
+        Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Toggle.TextSize = 14.000
+        
+        ToggleColor.Name = "ToggleColor"
+        ToggleColor.Parent = Toggle
+        ToggleColor.BackgroundColor3 = Color3.fromRGB(173, 0, 0)
+        ToggleColor.BorderSizePixel = 0
+        ToggleColor.Size = UDim2.new(0, 280, 0, 2)
+        
+        local Red = Color3.new(173,0,0)
+        local Green = Color3.new(82, 145, 23)
+
+        
+    end
+    function GLib:NewTextbox(Tab,Name,Action)
+        local Textbox = Instance.new("TextBox")
+        local TextboxTitle = Instance.new("TextLabel")
+        
+        Textbox.Name = Name .. 'Textbox' or "blankTextbox"
+        Textbox.Parent = SFrame
+        Textbox.BackgroundColor3 = Color3.fromRGB(5, 5, 5)
+        Textbox.BorderSizePixel = 0
+        Textbox.Position = UDim2.new(-0.0404040404, 0, 0.192187503, 0)
+        Textbox.Size = UDim2.new(0, 280, 0, 36)
+        Textbox.Font = Enum.Font.SourceSansItalic
+        Textbox.PlaceholderColor3 = Color3.fromRGB(52, 52, 52)
+        Textbox.PlaceholderText = "AMOUNT"
+        Textbox.Text = ""
+        Textbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+        Textbox.TextSize = 20.000
+        Textbox.TextYAlignment = Enum.TextYAlignment.Bottom
+        
+        TextboxTitle.Name = "TextboxTitle"
+        TextboxTitle.Parent = Textbox
+        TextboxTitle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        TextboxTitle.BackgroundTransparency = 1.000
+        TextboxTitle.Size = UDim2.new(0, 280, 0, 20)
+        TextboxTitle.Font = Enum.Font.SourceSans
+        TextboxTitle.Text = "Title"
+        TextboxTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextboxTitle.TextSize = 20.000
+        TextboxTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+    end
+    function GLib:BindKeyToggle(Tab,Name,Key,Action)
+        
+    end
+    function GLib:NewInfo(Name,DisplayName)
+        local InfoLabel = Instance.new("TextLabel")
+
+        InfoLabel.Name = Name .. 'Info' or 'blankInfo'
+        InfoLabel.Parent = InfoFrame
+        InfoLabel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+        InfoLabel.BorderSizePixel = 0
+        InfoLabel.Position = UDim2.new(0.0729999989, 0, 0.519999981, 0)
+        InfoLabel.Size = UDim2.new(0, 115, 0, 26)
+        InfoLabel.Font = Enum.Font.SourceSans
+        InfoLabel.Text = DisplayName .. ':' or 'blank'
+        InfoLabel.TextColor3 = Color3.fromRGB(72, 72, 72)
+        InfoLabel.TextSize = 14.000
+
+    end
+    return GLib;
+end
+
+
+
