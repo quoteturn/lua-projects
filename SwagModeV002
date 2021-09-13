@@ -1,7 +1,7 @@
         
         game.StarterGui:SetCore("SendNotification", {
         Title = "sorry for any false kicks";
-        Text = "swag mode was under maintenance";
+        Text = "swag mode was under maintenance - fixed now";
         Duration = 5;
 })
 
