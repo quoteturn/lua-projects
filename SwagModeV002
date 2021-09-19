@@ -1,7 +1,7 @@
         
         game.StarterGui:SetCore("SendNotification", {
-        Title = "only use the official swag mode loadstring ";
-        Text = "cause bad things might happen if u dont";
+        Title = "fixed";
+        Text = "xd lel";
         Duration = 5;
 })
 
