@@ -2,8 +2,8 @@
 
 
  game.StarterGui:SetCore("SendNotification", {
-        Title = "fixed";
-        Text = "xd lel";
+        Title = ".gg/swaggest";
+        Text = "Join our Discord!";
         Duration = 5;
 })
 
