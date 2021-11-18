@@ -1,6 +1,6 @@
 game.StarterGui:SetCore("SendNotification", {
 Title = 'pls join group';
-Text = 'crash updated sorry';
+Text = 'crash updated sorry for delay';
 Duration = 20;
 })
 setclipboard('https://www.roblox.com/groups/12052955/Swag-mod#!/about')
