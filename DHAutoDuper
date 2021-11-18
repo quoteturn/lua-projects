@@ -5,6 +5,7 @@
 ]]
 
 -- Note : all scripted by me [ Lerk#7643 / owner of this github ] #besides the NL function, stole that from IY
+-- Note 2 :  THIS IS A WORK IN PROGRESS, WHAT IS SHOWN IS NOT COMPLETE WORK
 
 if not game:IsLoaded() then game.Loaded:Wait() end
 if getgenv().Enabled == true then
