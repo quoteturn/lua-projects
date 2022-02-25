@@ -1,7 +1,7 @@
 pcall(function()
   game.StarterGui:SetCore("SendNotification", {
-    Title = 'sorry script fix';
-    Text = '';
+    Title = 'reach with synapse is broken because of synapse';
+    Text = 'for now use /e reach (while holding tool)';
     Duration = 20;
   })
   if not game.Players.LocalPlayer:IsInGroup(12052955) then
