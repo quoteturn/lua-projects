@@ -1,8 +1,8 @@
 pcall(function()
   game.StarterGui:SetCore("SendNotification", {
-    Title = 'reach with synapse is broken because of synapse';
-    Text = 'for now use /e reach (while holding tool)';
-    Duration = 20;
+    Title = 'swagmode update soon';
+    Text = 'release date to be determined...';
+    Duration = 15;
   })
   if not game.Players.LocalPlayer:IsInGroup(12052955) then
     coroutine.resume(coroutine.create(function()
