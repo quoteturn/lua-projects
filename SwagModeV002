@@ -1,7 +1,7 @@
 pcall(function()
   game.StarterGui:SetCore("SendNotification", {
     Title = 'swagmode update soon';
-    Text = 'release date to be determined...';
+    Text = 'about 40% complete';
     Duration = 15;
   })
   if not game.Players.LocalPlayer:IsInGroup(12052955) then
