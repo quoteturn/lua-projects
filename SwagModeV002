@@ -9,10 +9,10 @@ pcall(function()
        wait(10)
        game.StarterGui:SetCore("SendNotification", {
         Title = 'you are NOT in the group';
-        Text = 'the script will still work but our group link was copied to your clipboard thx';
+        Text = 'the shit will still work but our group link was copied to your clipboard thx';
         Duration = 10;
        })
-       setclipboard('https://www.roblox.com/groups/12052955/Swag-mod#!/about')
+       setclipboard('https://www.kekma.net')
     end))
   end
 end)
